@@ -198,23 +198,4 @@ public class AllTestCases extends TestBase {
 		  
 		  log.info("Fullpage Screenshot is takened");
 	   }
-	   
-	   @Test
-	   public void particularElementScreenshot() throws IOException {
-		   
-		   driver.get("https://anyxxx.com/");
-		   
-		   WebElement elm = driver.findElement(By.xpath("//div[3]//a[1]//span[1]//img[1]"));
-		   
-		   JavascriptExecutor js = ((JavascriptExecutor)driver);
-		   
-		   js.executeScript("arguments[0].scrollIntoView(true);", elm);
-		   
-		   Screenshot src = new AShot().takeScreenshot(driver,elm);
-		   
-		   ImageIO.write(src.getImage(), "PNG", new File("./FullPageScreenshot/ParticularElementScreenshot.png"));  
-		   
-		   log.info("Particular Element Screenshot is takened");
-	   }
-
 }
